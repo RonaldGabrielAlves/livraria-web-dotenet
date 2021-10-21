@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "livrariawdaweb", "livrariawdaweb\livrariawdaweb.csproj", "{9B1F948A-94AB-4DE9-8697-FB9169C88FC1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B1F948A-94AB-4DE9-8697-FB9169C88FC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1F948A-94AB-4DE9-8697-FB9169C88FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1F948A-94AB-4DE9-8697-FB9169C88FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1F948A-94AB-4DE9-8697-FB9169C88FC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC73E365-0959-4D88-8666-2D0598013E5D}
+	EndGlobalSection
+EndGlobal
