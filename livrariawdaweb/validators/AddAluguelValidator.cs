@@ -22,7 +22,10 @@ namespace livrariawdaweb.validators
                     .WithMessage("A data do aluguel não deve ser nulo!");
             RuleFor(m => m.dataprevdev)
                 .NotEmpty()
-                    .WithMessage("A data de previsão de devolução não deve ser nulo!");
+                    .WithMessage("A data de previsão de devolução não deve ser nulo!")
+                .GreaterThan(m => m.dataalu)
+                    .WithMessage("A data de previsão de devolução deve ser maior que a data de aluguel!");
+
         }
     }
 }

@@ -13,10 +13,11 @@ namespace livrariawdaweb.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class LivromsalugController : ControllerBase
+    public class LivrodispController : ControllerBase
     {
+
         private readonly IConfiguration _configuration;
-        public LivromsalugController(IConfiguration configuration)
+        public LivrodispController(IConfiguration configuration)
         {
             _configuration = configuration;
         }
@@ -25,7 +26,7 @@ namespace livrariawdaweb.Controllers
         public JsonResult Get()
         {
             string query = @"
-                   select livros.idliv, livros.nomeliv, count(aluguel.livroalu) as quantidade from livromsalug join aluguel join livros on livros.idliv = aluguel.livroalu group by aluguel.livroalu order by count(aluguel.livroalu) desc limit 3
+                  select livros.idliv, livros.nomeliv, livros.qtdliv, count(aluguel.livroalu) as nalugueis, (livros.qtdliv - count(aluguel.livroalu)) as restante from livrodisp join aluguel join livros on livros.idliv = aluguel.livroalu group by aluguel.livroalu order by count(aluguel.livroalu) desc
             ";
 
             DataTable table = new DataTable();
@@ -33,7 +34,7 @@ namespace livrariawdaweb.Controllers
             MySqlDataReader myReader;
             using (MySqlConnection mycon = new MySqlConnection(sqlDataSource))
             {
-                mycon.Open();  
+                mycon.Open();
                 using (MySqlCommand myCommand = new MySqlCommand(query, mycon))
                 {
                     myReader = myCommand.ExecuteReader();
@@ -47,5 +48,6 @@ namespace livrariawdaweb.Controllers
             return new JsonResult(table);
 
         }
+
     }
 }

@@ -34,7 +34,7 @@ namespace livrariawdaweb.validators
                 .NotEmpty()
                     .WithMessage("A quantidade de livros não deve ser nula!")
                 .GreaterThan(0)
-                    .WithMessage("A quantidade de livros deve ser maior ou igual a 0!");
+                    .WithMessage("A quantidade de livros deve ser maior ou igual a 1!");
         }
     }
 }

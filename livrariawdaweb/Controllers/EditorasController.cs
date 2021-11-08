@@ -6,6 +6,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -128,16 +129,22 @@ namespace livrariawdaweb.Controllers
                 mycon.Open();
                 using (MySqlCommand myCommand = new MySqlCommand(query, mycon))
                 {
-                    myCommand.Parameters.AddWithValue("@idedi", id);
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader);
-
-                    myReader.Close();
-                    mycon.Close();
+                    try
+                    {
+                        myCommand.Parameters.AddWithValue("@idedi", id);
+                        myReader = myCommand.ExecuteReader();
+                        table.Load(myReader);
+                        myReader.Close();
+                        mycon.Close();
+                        return new JsonResult("Deletado com Sucesso!");
+                    }
+                    catch (MySql.Data.MySqlClient.MySqlException) { 
+                        return new JsonResult("Não foi possível deletar");
+                    }
+                    
                 }
             }
 
-            return new JsonResult("Deletado com Sucesso!");
 
         }
 

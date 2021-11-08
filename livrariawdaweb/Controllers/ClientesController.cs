@@ -25,7 +25,7 @@ namespace livrariawdaweb.Controllers
         public JsonResult Get()
         {
             string query = @"
-                    select idcli, nomecli, enderecocli, cidadecli, emailcli from clientes
+                    select idcli, nomecli, enderecocli, cidadecli, emailcli from clientes 
             ";
 
             DataTable table = new DataTable();
@@ -133,16 +133,21 @@ namespace livrariawdaweb.Controllers
                 mycon.Open();
                 using (MySqlCommand myCommand = new MySqlCommand(query, mycon))
                 {
+                    try{
                     myCommand.Parameters.AddWithValue("@idcli", id);
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
 
                     myReader.Close();
                     mycon.Close();
+                    return new JsonResult("Deletado com Sucesso!");
+                    }
+                    catch (MySql.Data.MySqlClient.MySqlException) { 
+                        return new JsonResult("Não foi possível deletar");
+                    }
                 }
             }
 
-            return new JsonResult("Deletado com Sucesso!");
 
         }
 

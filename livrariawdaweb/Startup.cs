@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Serialization;
 using FluentValidation.AspNetCore;
 using livrariawdaweb.validators;
+using Microsoft.OpenApi.Models;
 
 namespace livrariawdaweb
 {
@@ -43,7 +44,13 @@ namespace livrariawdaweb
             services.AddControllers()
                 .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<AddClientesValidator>())
                 .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<AddEditorasValidator>())
+                .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<AddAluguelValidator>())
                 .AddFluentValidation(config => config.RegisterValidatorsFromAssemblyContaining<AddLivrosValidator>());
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Livraria WDA", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,6 +71,14 @@ namespace livrariawdaweb
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.RoutePrefix = string.Empty;
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
             });
         }
     }

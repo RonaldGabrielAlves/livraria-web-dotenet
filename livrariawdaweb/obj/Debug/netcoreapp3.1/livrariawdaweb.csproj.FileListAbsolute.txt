@@ -20,7 +20,6 @@ C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\obj\Debug\net
 C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\obj\Debug\netcoreapp3.1\staticwebassets\livrariawdaweb.StaticWebAssets.xml
 C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\obj\Debug\netcoreapp3.1\scopedcss\bundle\livrariawdaweb.styles.css
 C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\obj\Debug\netcoreapp3.1\livrariawdaweb.RazorTargetAssemblyInfo.cache
-C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\obj\Debug\netcoreapp3.1\livrariawdaweb.csproj.CopyComplete
 C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\obj\Debug\netcoreapp3.1\livrariawdaweb.dll
 C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\obj\Debug\netcoreapp3.1\livrariawdaweb.pdb
 C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\obj\Debug\netcoreapp3.1\livrariawdaweb.genruntimeconfig.cache
@@ -39,3 +38,7 @@ C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\bin\Debug\net
 C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
 C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\obj\Debug\netcoreapp3.1\livrariawdaweb.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
