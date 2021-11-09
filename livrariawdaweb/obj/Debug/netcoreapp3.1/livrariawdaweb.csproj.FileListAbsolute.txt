@@ -42,3 +42,4 @@ C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\bin\Debug\net
 C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Izabel\Desktop\tutorial\api\livrariawdaweb\livrariawdaweb\obj\Debug\netcoreapp3.1\livrariawdaweb.csproj.CopyComplete

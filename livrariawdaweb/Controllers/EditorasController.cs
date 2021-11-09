@@ -139,7 +139,7 @@ namespace livrariawdaweb.Controllers
                         return new JsonResult("Deletado com Sucesso!");
                     }
                     catch (MySql.Data.MySqlClient.MySqlException) { 
-                        return new JsonResult("Não foi possível deletar");
+                        return new JsonResult("Não foi possível deletar.  A editora possui livros cadastrados!");
                     }
                     
                 }
