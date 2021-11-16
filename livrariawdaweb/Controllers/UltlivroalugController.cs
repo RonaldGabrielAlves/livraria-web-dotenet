@@ -25,7 +25,7 @@ namespace livrariawdaweb.Controllers
         public JsonResult Get()
         {
             string query = @"
-                    select aluguel.livroalu, livros.nomeliv from ultlivroalug join aluguel join livros on livros.idliv = aluguel.livroalu where aluguel.idalug = (select max(idalug) from aluguel)
+                    select aluguel.dataalu, livros.nomeliv,  clientes.nomecli from ultlivroalug join aluguel join livros on livros.idliv = aluguel.livroalu join clientes on clientes.idcli = aluguel.clientealu where aluguel.idalug = (select max(idalug) from aluguel)
             ";
 
             DataTable table = new DataTable();
