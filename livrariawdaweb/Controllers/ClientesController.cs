@@ -64,6 +64,7 @@ namespace livrariawdaweb.Controllers
                 mycon.Open();
                 using (MySqlCommand myCommand = new MySqlCommand(query, mycon))
                 {
+                    try{
                     myCommand.Parameters.AddWithValue("@nomecli", cli.nomecli);
                     myCommand.Parameters.AddWithValue("@enderecocli", cli.enderecocli);
                     myCommand.Parameters.AddWithValue("@cidadecli", cli.cidadecli);
@@ -73,10 +74,14 @@ namespace livrariawdaweb.Controllers
 
                     myReader.Close();
                     mycon.Close();
+                    return new JsonResult("Adicionado com Sucesso!");
+                    }
+                    catch (MySql.Data.MySqlClient.MySqlException) { 
+                        return new JsonResult("Não foi possível adicionar.  Email já existente, tente com outro email!");
+                    }
                 }
             }
 
-            return new JsonResult("Adicionado com Sucesso!");
 
         }
 
@@ -100,6 +105,7 @@ namespace livrariawdaweb.Controllers
                 mycon.Open();
                 using (MySqlCommand myCommand = new MySqlCommand(query, mycon))
                 {
+                    try{
                     myCommand.Parameters.AddWithValue("@idcli", cli.idcli);
                     myCommand.Parameters.AddWithValue("@nomecli", cli.nomecli);
                     myCommand.Parameters.AddWithValue("@enderecocli", cli.enderecocli);
@@ -110,10 +116,14 @@ namespace livrariawdaweb.Controllers
 
                     myReader.Close();
                     mycon.Close();
+                    return new JsonResult("Editado com Sucesso!");
+                    }
+                    catch (MySql.Data.MySqlClient.MySqlException) { 
+                        return new JsonResult("Não foi possível Editar.  Email já existente, tente com outro email!");
+                    }
                 }
             }
 
-            return new JsonResult("Editado com Sucesso!");
 
         }
 

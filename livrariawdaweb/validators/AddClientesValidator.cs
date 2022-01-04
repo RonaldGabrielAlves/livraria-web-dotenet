@@ -30,8 +30,8 @@ namespace livrariawdaweb.validators
                     .WithMessage("A cidade do cliente não deve ser nulo!")
                 .MaximumLength(50)
                     .WithMessage("O número de caracteres não deve ser maior que 50!")
-                .MinimumLength(5)
-                    .WithMessage("O número de caracteres não deve ser menor que 5!");
+                .MinimumLength(3)
+                    .WithMessage("O número de caracteres não deve ser menor que 3!");
             RuleFor(m => m.emailcli)
                 .NotEmpty()
                     .WithMessage("O email do cliente não deve ser nulo!")

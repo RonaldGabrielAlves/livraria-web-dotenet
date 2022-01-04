@@ -66,6 +66,7 @@ namespace livrariawdaweb.Controllers
                 mycon.Open();
                 using (MySqlCommand myCommand = new MySqlCommand(query, mycon))
                 {
+                    try{
                     myCommand.Parameters.AddWithValue("@nomedi", edi.nomedi);
                     myCommand.Parameters.AddWithValue("@cidadedi", edi.cidadedi);
                     myReader = myCommand.ExecuteReader();
@@ -73,10 +74,14 @@ namespace livrariawdaweb.Controllers
 
                     myReader.Close();
                     mycon.Close();
+                    return new JsonResult("Adicionado com sucesso!");
+                    }
+                    catch (MySql.Data.MySqlClient.MySqlException) { 
+                        return new JsonResult("Não foi possível adicionar.  Essa editora já existe!");
+                    }
                 }
             }
 
-            return new JsonResult("Adicionado com Sucesso!");
 
         }
 
@@ -98,6 +103,7 @@ namespace livrariawdaweb.Controllers
                 mycon.Open();
                 using (MySqlCommand myCommand = new MySqlCommand(query, mycon))
                 {
+                    try{
                     myCommand.Parameters.AddWithValue("@idedi", edi.idedi);
                     myCommand.Parameters.AddWithValue("@nomedi", edi.nomedi);
                     myCommand.Parameters.AddWithValue("@cidadedi", edi.cidadedi);
@@ -106,10 +112,14 @@ namespace livrariawdaweb.Controllers
 
                     myReader.Close();
                     mycon.Close();
+                    return new JsonResult("Editado com Sucesso!");
+                    }
+                    catch (MySql.Data.MySqlClient.MySqlException) { 
+                        return new JsonResult("Não foi possível editar.  Essa editora já existe!");
+                    }
                 }
             }
 
-            return new JsonResult("Editado com Sucesso!");
 
         }
 

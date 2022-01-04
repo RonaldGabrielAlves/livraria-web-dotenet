@@ -26,7 +26,7 @@ namespace livrariawdaweb.Controllers
         public JsonResult Get()
         {
             string query = @"
-                  select livros.idliv, livros.nomeliv, livros.qtdliv, count(aluguel.livroalu) as nalugueis, (livros.qtdliv - count(aluguel.livroalu)) as restante from livrodisp join aluguel join livros on livros.idliv = aluguel.livroalu group by aluguel.livroalu order by count(aluguel.livroalu) desc
+                  select livros.idliv, livros.nomeliv, livros.qtdliv, count(aluguel.livroalu) as nalugueis, (livros.qtdliv - count(aluguel.livroalu)) as restante from livrodisp join aluguel join livros on livros.idliv = aluguel.livroalu group by aluguel.livroalu
             ";
 
             DataTable table = new DataTable();
